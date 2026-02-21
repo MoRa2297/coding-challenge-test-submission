@@ -24,7 +24,7 @@ function App() {
   } = useAddressForm();
 
   const { postCode, houseNumber, firstName, lastName } = fields;
-  console.log('addresses ', addresses);
+
   return (
     <main>
       <Section>
