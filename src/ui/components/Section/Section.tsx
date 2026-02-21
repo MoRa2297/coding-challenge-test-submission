@@ -4,6 +4,7 @@ import cx from 'classnames';
 import $ from './Section.module.css';
 
 type VariantType = 'light' | 'dark';
+
 interface SectionProps {
   variant?: VariantType;
   children: React.ReactNode;

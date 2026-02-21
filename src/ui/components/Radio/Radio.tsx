@@ -12,8 +12,10 @@ interface RadioProps {
 const Radio: FunctionComponent<RadioProps> = ({ children, id, name, onChange }) => {
   return (
     <div className={$.radio}>
-      <input type="radio" id={id} name={name} onChange={onChange} value={id} />
-      <label htmlFor={id}>{children}</label>
+      <label htmlFor={id}>
+        <input type="radio" id={id} name={name} onChange={onChange} value={id} />
+        {children}
+      </label>
     </div>
   );
 };

@@ -6,15 +6,26 @@
   display: flex;
   gap: 1rem;
   margin: 1rem 0;
-  max-width: var(--width-input);
-  padding: 1em;
   width: 100%;
+  position: relative;
 }
 
 .radio:hover {
   background: var(--color-accent);
 }
 
-.radio input[type="radio"] {
+.radio label {
+  padding: 1em;
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.radio input[type='radio'] {
   margin: 0;
+  cursor: pointer;
+  flex-shrink: 0;
+  accent-color: var(--color-brand);
 }
