@@ -4,11 +4,6 @@
   gap: 1rem;
 }
 
-.remove {
-  --color-brand: var(--color-accent);
-  margin-left: auto;
-}
-
 .item {
   align-items: center;
   display: flex;
@@ -21,4 +16,23 @@
 
 .item h3 {
   margin: 0 0 0.5em;
+}
+
+.remove {
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.removeButton {
+  --color-brand: #e74c3c;
+  border-color: #e74c3c;
+  color: #e74c3c;
+  width: auto;
+  padding: 0.4em 0.8em;
+  font-size: 0.8em;
+}
+
+.removeButton:hover {
+  background-color: #e74c3c;
+  color: white;
 }
