@@ -1,0 +1,10 @@
+.error {
+    color: #c0392b;
+    background-color: #fdecea;
+    border: 1px solid #e74c3c;
+    border-radius: var(--border-radius-default);
+    padding: 0.75em 1em;
+    margin: 0.5em 0;
+    max-width: var(--width-input);
+    font-size: 0.9em;
+}
