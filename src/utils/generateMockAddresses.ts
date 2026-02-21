@@ -7,7 +7,7 @@ const postCodeToCityMapping = {
   6: 'Burleigh',
   7: 'Byron Bay',
   8: 'Geelong',
-  9: 'Warrnambool'
+  9: 'Warrnambool',
 };
 
 const streetNumberToStreetMapping = {
@@ -19,7 +19,7 @@ const streetNumberToStreetMapping = {
   6: 'Black Spur Drive',
   7: 'Grand Pacific Drive',
   8: 'Paddys River Road',
-  9: 'Red Centre Way'
+  9: 'Red Centre Way',
 };
 
 const generateMockAddresses = (postcode: string, streetNumber: string) => {
@@ -29,32 +29,14 @@ const generateMockAddresses = (postcode: string, streetNumber: string) => {
   const streetMapping: string = (streetNumberToStreetMapping as any)[streetNumberFirstChar];
 
   if (postcodeMapping) {
-    return [
-      {
-        city: postcodeMapping,
-        houseNumber: '1',
-        postcode,
-        street: `${streetNumber} ${streetMapping}`,
-        lat: Math.random(),
-        long: Math.random()
-      },
-      {
-        city: postcodeMapping,
-        houseNumber: '2',
-        postcode,
-        street: `${streetNumber} ${streetMapping}`,
-        lat: Math.random(),
-        long: Math.random()
-      },
-      {
-        city: postcodeMapping,
-        houseNumber: '3',
-        postcode,
-        street: `${streetNumber} ${streetMapping}`,
-        lat: Math.random(),
-        long: Math.random()
-      }
-    ];
+    return [1, 2, 3].map((num) => ({
+      city: postcodeMapping,
+      houseNumber: String(num),
+      postcode,
+      street: streetMapping,
+      lat: num,
+      long: num,
+    }));
   }
 
   return null;

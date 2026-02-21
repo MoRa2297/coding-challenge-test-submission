@@ -9,6 +9,7 @@ interface ButtonProps {
   type?: ButtonType;
   variant?: ButtonVariant;
   loading?: boolean;
+  className?: string;
   children: React.ReactNode;
 }
 
@@ -18,25 +19,23 @@ const Button: FunctionComponent<ButtonProps> = ({
   type = 'button',
   variant = 'primary',
   loading = false,
+  className,
 }) => {
   return (
     <button
-      className={cx($.button, {
-        [$.primary]: variant === 'primary',
-        [$.secondary]: variant === 'secondary',
-      })}
+      className={cx(
+        $.button,
+        {
+          [$.primary]: variant === 'primary',
+          [$.secondary]: variant === 'secondary',
+        },
+        className,
+      )}
       type={type}
       onClick={onClick}
       disabled={loading}
     >
-      {loading ? (
-        <>
-          <span data-testid="loading-spinner" className={$.spinner} />
-          {children}
-        </>
-      ) : (
-        children
-      )}
+      {loading ? <span data-testid="loading-spinner" className={$.spinner} /> : children}
     </button>
   );
 };

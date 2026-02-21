@@ -1,19 +1,19 @@
-import React from "react";
-import { useAppSelector } from "../../../core/store/hooks";
+import React, { useEffect } from 'react';
+import { useAppSelector } from '../../../core/store/hooks';
 
-import useAddressBook from "../../hooks/useAddressBook";
-import Address from "../Address/Address";
-import Button from "../Button/Button";
-import Card from "../Card/Card";
-import $ from "./AddressBook.module.css";
-import { selectAddress } from "../../../core/reducers/addressBookSlice";
+import useAddressBook from '../../hooks/useAddressBook';
+import Address from '../Address/Address';
+import Button from '../Button/Button';
+import Card from '../Card/Card';
+import $ from './AddressBook.module.css';
+import { selectAddress } from '../../../core/reducers/addressBookSlice';
 
 const AddressBook = () => {
   const addresses = useAppSelector(selectAddress);
   const { removeAddress, loadSavedAddresses, loading } = useAddressBook();
   const addressBookTitle = `📓 Address book (${addresses.length})`;
 
-  React.useEffect(() => {
+  useEffect(() => {
     loadSavedAddresses();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -37,6 +37,7 @@ const AddressBook = () => {
                   <div className={$.remove}>
                     <Button
                       variant="secondary"
+                      className={$.removeButton}
                       onClick={() => removeAddress(address.id)}
                     >
                       Remove
